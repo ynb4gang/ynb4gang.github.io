@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vladimir Nosov — Product Owner for data platforms. Turning messy analytics into reliable data products, trusted metrics and measurable business impact." />
+  <title>Vladimir Nosov — Product Owner for Data Platforms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span>Loading trusted data product</span>
+      <strong>VN</strong>
+      <i></i>
+    </div>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><span id="cursorText"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <div class="progress"><span id="progressBar"></span></div>
+
+  <header class="nav">
+    <a href="#hero" class="brand magnetic" data-cursor="Home">
+      <span class="brand__dot"></span>
+      <span><b>Vladimir Nosov</b><small>Product Owner · Data Platforms</small></span>
+    </a>
+    <nav class="nav__links" aria-label="Main navigation">
+      <a href="#hero">Home</a>
+      <a href="#product">Product</a>
+      <a href="#change">Change</a>
+      <a href="#metrics">Metrics</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#method">Method</a>
+      <a href="#cases">Cases</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--solid magnetic" href="#contact" data-cursor="Contact">Get in touch</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#hero">Home</a>
+    <a href="#product">Product</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#cases">Cases</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <aside class="section-rail" aria-label="Section navigation">
+    <a href="#hero" class="active" data-title="Hero"></a>
+    <a href="#product" data-title="Product"></a>
+    <a href="#change" data-title="Change"></a>
+    <a href="#metrics" data-title="Metrics"></a>
+    <a href="#architecture" data-title="System"></a>
+    <a href="#method" data-title="Method"></a>
+    <a href="#cases" data-title="Cases"></a>
+    <a href="#contact" data-title="Contact"></a>
+  </aside>
+
+  <main>
+    <section class="screen hero" id="hero" data-theme="dark">
+      <div class="section-transition section-transition--bottom transition-grid" aria-hidden="true"></div>
+      <div class="screen__inner hero__inner">
+        <div class="hero__copy reveal">
+          <div class="eyebrow">Product Owner for Data Platforms</div>
+          <h1><span>DATA</span><span>PRODUCTS</span><span>YOU CAN TRUST</span></h1>
+          <div class="dynamic-line" aria-live="polite">I build reliable data for <span id="flipWord">executives</span></div>
+          <p>I turn messy analytics, unclear ownership and fragile reporting into reliable data products: governed metrics, production-grade pipelines, executive dashboards and measurable business impact.</p>
+          <div class="hero__cta">
+            <a class="btn btn--solid magnetic" href="#product" data-cursor="View story">View product story</a>
+            <a class="btn btn--ghost magnetic" href="#cases" data-cursor="Open cases">Explore cases</a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal reveal--delay-1">
+          <div class="portrait-orbit" data-tilt>
+            <div class="portrait-card">
+              <img src="assets/vladimir.jpg" alt="Vladimir Nosov portrait" />
+              <div class="portrait-card__meta">
+                <strong>Vladimir Nosov</strong>
+                <span>PO mindset · DE depth · Business impact</span>
+              </div>
+            </div>
+            <div class="live-card live-card--sla"><small>SLA</small><b>99.6%</b><span>green zone</span></div>
+            <div class="live-card live-card--dq"><small>Data Quality</small><b>+38%</b><span>trust uplift</span></div>
+            <div class="live-card live-card--roadmap"><small>Roadmap</small><b>Q1 → Q2</b><span>prioritized</span></div>
+          </div>
+        </div>
+
+        <div class="hero__motion reveal reveal--delay-2" aria-hidden="true">
+          <div class="flow-node">Raw data</div><i></i><div class="flow-node">Quality</div><i></i><div class="flow-node">Marts</div><i></i><div class="flow-node">Decision</div>
+        </div>
+
+        <div class="hero-story reveal reveal--delay-2" aria-label="Product story">
+          <span>Messy data</span><i></i><span>Owned metrics</span><i></i><span>Trusted dashboards</span><i></i><span>Business impact</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen product" id="product" data-theme="light">
+      <div class="section-transition section-transition--top transition-line" aria-hidden="true"></div>
+      <div class="screen__inner split">
+        <div class="section-copy reveal">
+          <span class="tag">01 / Product ownership</span>
+          <h2>From data chaos to product roadmap.</h2>
+          <p>I connect stakeholder pain, metric ownership, engineering feasibility and business KPI into a roadmap that ships as a reliable platform capability — not as another isolated report.</p>
+        </div>
+        <div class="roadmap reveal reveal--delay-1">
+          <button class="roadmap__step open-card" data-card="discovery" data-cursor="Open">
+            <span>01</span><b>Discover</b><p>Business pain, users, metric conflicts and manual workflows.</p><em>Open details</em>
+          </button>
+          <button class="roadmap__step open-card" data-card="prioritize" data-cursor="Open">
+            <span>02</span><b>Prioritize</b><p>Value scoring, SLA risk, adoption potential and feasibility.</p><em>Open details</em>
+          </button>
+          <button class="roadmap__step open-card" data-card="deliver" data-cursor="Open">
+            <span>03</span><b>Deliver</b><p>DWH features, pipelines, dashboards, data contracts and release scope.</p><em>Open details</em>
+          </button>
+          <button class="roadmap__step open-card" data-card="measure" data-cursor="Open">
+            <span>04</span><b>Measure</b><p>Adoption, freshness, quality, MTTR and business trust.</p><em>Open details</em>
+          </button>
+        </div>
+        <div class="product-timeline reveal reveal--delay-2">
+          <div class="timeline-step active"><span>01</span><b>Vision</b></div>
+          <div class="timeline-step"><span>02</span><b>Roadmap</b></div>
+          <div class="timeline-step"><span>03</span><b>Delivery</b></div>
+          <div class="timeline-step"><span>04</span><b>Adoption</b></div>
+          <div class="timeline-step"><span>05</span><b>Impact</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen change" id="change" data-theme="dark">
+      <div class="section-transition section-transition--bottom transition-diagonal" aria-hidden="true"></div>
+      <div class="screen__inner change__inner">
+        <div class="section-copy reveal">
+          <span class="tag">02 / Transformation</span>
+          <h2>Messy data becomes a controlled product.</h2>
+          <p>The outcome is not another dashboard. It is a governed operating layer: one metric definition, clear ownership, controlled release flow, measurable quality and a business-ready decision surface.</p>
+        </div>
+        <div class="change-stage reveal reveal--delay-1">
+          <article class="change-panel change-panel--before">
+            <header>
+              <span>Before</span>
+              <b>Fragmented flow</b>
+            </header>
+            <ul>
+              <li>Manual Excel uploads and one-off fixes</li>
+              <li>Different KPI values across reports</li>
+              <li>No owner for critical metrics</li>
+              <li>Reactive incident handling</li>
+              <li>Slow analytical queries in production</li>
+            </ul>
+            <div class="change-meter">
+              <small>Trust score</small>
+              <i><em style="width:42%"></em></i>
+              <strong>42</strong>
+            </div>
+          </article>
+          <div class="change-core" aria-hidden="true">
+            <div class="change-core__orb"><span></span></div>
+            <div class="change-core__label">Ownership · SLA · Quality · Release</div>
+            <div class="change-core__steps">
+              <span>Audit</span>
+              <span>Define</span>
+              <span>Govern</span>
+              <span>Ship</span>
+            </div>
+          </div>
+          <article class="change-panel change-panel--after">
+            <header>
+              <span>After</span>
+              <b>Reliable product layer</b>
+            </header>
+            <ul>
+              <li>Governed data marts and contracts</li>
+              <li>Single source of truth for reporting</li>
+              <li>SLA, freshness and lineage control</li>
+              <li>Quality checks with alerting</li>
+              <li>Executive-ready dashboards and APIs</li>
+            </ul>
+            <div class="change-meter">
+              <small>Trust score</small>
+              <i><em style="width:91%"></em></i>
+              <strong>91</strong>
+            </div>
+          </article>
+        </div>
+        <div class="change-strip reveal reveal--delay-2">
+          <span>Single source of truth</span>
+          <span>Clear ownership</span>
+          <span>SLA and freshness</span>
+          <span>Quality by default</span>
+          <span>Decision-ready surface</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen metrics" id="metrics" data-theme="light">
+      <div class="section-transition section-transition--top transition-bars" aria-hidden="true"></div>
+      <div class="screen__inner metrics__inner">
+        <div class="section-copy reveal">
+          <span class="tag">03 / Executive cockpit</span>
+          <h2>Metrics that prove the data product works.</h2>
+          <p>A reliable data product should be managed like a product: reliability, adoption, freshness, latency, incidents, roadmap and business value.</p>
+        </div>
+        <div class="cockpit reveal reveal--delay-1">
+          <div class="cockpit__tabs" role="tablist" aria-label="Cockpit tabs">
+            <button class="active" data-tab="reliability">Reliability</button>
+            <button data-tab="roadmap">Roadmap</button>
+            <button data-tab="impact">Impact</button>
+            <button data-tab="architecture">Architecture</button>
+          </div>
+          <div class="trust-score-card" aria-label="Data trust score">
+            <div><small>Data Trust Score</small><strong><span id="trustScore">42</span> → 91</strong><p>Quality, freshness, SLA and adoption combined into one product signal.</p></div>
+            <div class="trust-meter"><i></i></div>
+          </div>
+          <div class="cockpit__body">
+            <div class="cockpit__panel active" id="tab-reliability">
+              <div class="metric"><small>SLA Compliance</small><b class="count" data-value="99.6" data-suffix="%">0%</b></div>
+              <div class="metric"><small>Data Freshness</small><b class="count" data-value="18" data-suffix=" min">0</b></div>
+              <div class="metric"><small>Incident MTTR</small><b class="count" data-value="42" data-suffix="% ↓">0</b></div>
+              <div class="chart chart-line"><svg viewBox="0 0 500 180"><path class="chart-grid" d="M20 40H480M20 90H480M20 140H480"/><path class="chart-area" d="M20 140 C80 122 110 128 160 100 S260 72 310 86 S400 42 480 28 L480 160 L20 160Z"/><path class="draw-line" d="M20 140 C80 122 110 128 160 100 S260 72 310 86 S400 42 480 28"/></svg></div>
+            </div>
+            <div class="cockpit__panel" id="tab-roadmap">
+              <div class="kanban"><span>Discovery</span><span>Scoring</span><span>Delivery</span><span>Adoption</span></div>
+              <p>Roadmap connects user pain, engineering feasibility, business KPI and release value.</p>
+            </div>
+            <div class="cockpit__panel" id="tab-impact">
+              <div class="metric"><small>Query speed-up</small><b>up to 80%</b></div>
+              <div class="metric"><small>Discrepancy reduction</small><b>30–40%</b></div>
+              <div class="metric"><small>Supported flows</small><b>20+</b></div>
+            </div>
+            <div class="cockpit__panel" id="tab-architecture">
+              <div class="console-map">
+                <span>Sources</span><i></i><span>Ingestion</span><i></i><span>DWH</span><i></i><span>BI / AI</span>
+              </div>
+              <p>Architecture is managed as a product surface: ownership, contracts, freshness and adoption are visible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen architecture" id="architecture" data-theme="dark">
+      <div class="section-transition section-transition--bottom transition-pipeline" aria-hidden="true"></div>
+      <div class="screen__inner architecture__inner">
+        <div class="section-copy reveal">
+          <span class="tag">04 / Architecture</span>
+          <h2>Product vision backed by engineering reality.</h2>
+          <p>Architecture is part of the product. It defines how fast the team can ship, how reliable the data is and how easily the business can trust the result.</p>
+        </div>
+        <div class="pipeline-map reveal reveal--delay-1">
+          <button class="open-card" data-card="sources"><small>Sources</small><b>CRM · ERP · Events · APIs</b></button><i></i>
+          <button class="open-card" data-card="ingestion"><small>Ingestion</small><b>Airflow · Kafka · NiFi · CDC</b></button><i></i>
+          <button class="open-card" data-card="processing"><small>Processing</small><b>Spark · SQL · Python · DQ</b></button><i></i>
+          <button class="open-card" data-card="serving"><small>Serving</small><b>DWH · Marts · OLAP</b></button><i></i>
+          <button class="open-card" data-card="consumption"><small>Consumption</small><b>BI · AI · Alerts · APIs</b></button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="screen method" id="method" data-theme="light">
+      <div class="section-transition section-transition--top transition-steps" aria-hidden="true"></div>
+      <div class="screen__inner method__inner">
+        <div class="section-copy reveal">
+          <span class="tag">05 / How I work</span>
+          <h2>Product discipline for engineering-heavy data work.</h2>
+          <p>My operating model is simple: find the painful decision, define the metric, prioritize the roadmap, ship the data capability and measure whether people actually use it.</p>
+        </div>
+        <div class="method-grid reveal reveal--delay-1">
+          <article class="method-card"><small>01</small><h3>Discover the decision</h3><p>Who uses the data, which decision depends on it, where trust breaks, and what manual work exists today.</p></article>
+          <article class="method-card"><small>02</small><h3>Define the product metric</h3><p>SLA, freshness, quality, ownership, adoption and business KPI become part of the product definition.</p></article>
+          <article class="method-card"><small>03</small><h3>Prioritize the roadmap</h3><p>Backlog is scored by business value, risk, feasibility, dependency cost and platform leverage.</p></article>
+          <article class="method-card"><small>04</small><h3>Ship with controls</h3><p>Data contracts, tests, monitoring, backfill plan and release notes make delivery predictable.</p></article>
+          <article class="method-card"><small>05</small><h3>Measure adoption</h3><p>Usage, incidents, MTTR, dashboard trust and removed manual steps prove that the product works.</p></article>
+        </div>
+        <div class="scene-strip reveal reveal--delay-2">
+          <span>Discovery</span><i></i><span>KPI tree</span><i></i><span>Roadmap</span><i></i><span>Delivery</span><i></i><span>Adoption</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen cases" id="cases" data-theme="dark">
+      <div class="section-transition section-transition--top transition-stack" aria-hidden="true"></div>
+      <div class="screen__inner cases__inner">
+        <div class="section-copy reveal">
+          <span class="tag">06 / Case studies</span>
+          <h2>Proof through product stories.</h2>
+          <p>Each case shows the full chain: business problem, product decision, engineering solution, metrics, stack and measurable outcome.</p>
+        </div>
+        <div class="case-grid reveal reveal--delay-1">
+          <button class="case-card open-card" data-card="case-dwh" data-preview="Problem → slow queries. Result → up to 80% faster reporting." data-cursor="Open case">
+            <small>Case 01</small><h3>DWH performance optimization</h3><p>Slow reporting became a faster and more predictable analytics layer.</p><b>Open case →</b>
+          </button>
+          <button class="case-card open-card" data-card="case-dq" data-preview="Problem → messy entities. Result → governed validation and auditability." data-cursor="Open case">
+            <small>Case 02</small><h3>Data quality product</h3><p>Messy counterparty data became validated, deduplicated and auditable.</p><b>Open case →</b>
+          </button>
+          <button class="case-card open-card" data-card="case-ai" data-preview="Problem → repeated manual answers. Result → AI/RAG analytics assistant." data-cursor="Open case">
+            <small>Case 03</small><h3>AI analytics assistant</h3><p>Manual answers became a structured AI/RAG-enabled analytics experience.</p><b>Open case →</b>
+          </button>
+          <button class="case-card open-card" data-card="case-exec" data-preview="Problem → unclear KPI ownership. Result → executive metrics cockpit." data-cursor="Open case">
+            <small>Case 04</small><h3>Executive metrics layer</h3><p>Raw metrics became an accountable KPI layer for leadership decisions.</p><b>Open case →</b>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen contact" id="contact" data-theme="dark">
+      <div class="screen__inner contact__inner clean-contact">
+        <div class="section-copy reveal">
+          <span class="tag">07 / Contact</span>
+          <h2>Let’s turn messy data into a reliable product.</h2>
+          <p>I help teams turn fragile reporting, unclear ownership and slow decision-making into a cleaner data platform, governed metrics and an executive-ready product surface.</p>
+          <div class="contact-actions">
+            <button class="btn btn--solid magnetic" id="copyEmail" data-cursor="Copy email">Copy email</button>
+            <a class="btn btn--ghost magnetic" href="mailto:cartibenz6@gmail.com" data-cursor="Email">Email me</a>
+          </div>
+        </div>
+        <div class="contact-panel reveal reveal--delay-1">
+          <div><span>Role</span><b>Product Owner · Data Platforms</b></div>
+          <div><span>Focus</span><b>Roadmap · Data Reliability · DWH · BI · AI Analytics</b></div>
+          <div><span>Availability</span><b>Open for product and data opportunities</b></div>
+          <div><span>Telegram</span><b><a href="https://t.me/MeMyselfAndCode" target="_blank" rel="noreferrer">@MeMyselfAndCode</a></b></div>
+        </div>
+        <div class="footer-links reveal reveal--delay-2" aria-label="Profile links">
+          <a class="footer-link magnetic" href="mailto:cartibenz6@gmail.com" data-cursor="Email">Email</a>
+          <a class="footer-link magnetic" href="https://github.com/ynb4gang" target="_blank" rel="noreferrer" data-cursor="GitHub">GitHub</a>
+          <a class="footer-link magnetic" href="https://t.me/MeMyselfAndCode" target="_blank" rel="noreferrer" data-cursor="Telegram">Telegram</a>
+          <a class="footer-link magnetic" href="assets/vladimir-resume.pdf" target="_blank" rel="noreferrer" data-cursor="Resume">Resume</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="detail-dialog" id="detailDialog" aria-labelledby="detailTitle">
+    <button class="dialog-close" id="closeDialog" aria-label="Close dialog">×</button>
+    <div class="detail-dialog__head">
+      <span id="detailKicker">Case</span>
+      <h3 id="detailTitle">Title</h3>
+      <p id="detailLead">Lead text</p>
+    </div>
+    <div class="detail-grid" id="detailGrid"></div>
+  </dialog>
+
+  <dialog class="command-dialog" id="commandDialog" aria-labelledby="commandTitle">
+    <div class="command-head">
+      <span>Command palette</span>
+      <button id="closeCommand" aria-label="Close command menu">×</button>
+    </div>
+    <h3 id="commandTitle">Navigate faster</h3>
+    <div class="command-list">
+      <button data-command-target="#method">How I work <small>01</small></button>
+      <button data-command-target="#cases">View cases <small>02</small></button>
+      <button data-command-target="#architecture">Open architecture <small>03</small></button>
+      <button data-command-target="#metrics">Open cockpit <small>04</small></button>
+      <button data-command="copyEmail">Copy email <small>05</small></button>
+      <a href="assets/vladimir-resume.pdf" target="_blank" rel="noreferrer">Download CV <small>06</small></a>
+      <a href="https://github.com/ynb4gang" target="_blank" rel="noreferrer">Open GitHub <small>07</small></a>
+      <a href="https://t.me/MeMyselfAndCode" target="_blank" rel="noreferrer">Open Telegram <small>08</small></a>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
