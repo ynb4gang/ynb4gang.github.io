@@ -1,7 +1,6 @@
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-const loader = $('#loader');
 const progress = $('#progressBar');
 const cursor = $('#cursor');
 const cursorText = $('#cursorText');
@@ -95,7 +94,6 @@ const details = {
   }
 };
 
-window.addEventListener('load', () => setTimeout(() => loader?.classList.add('is-hidden'), 650));
 
 function updateProgress() {
   const max = document.documentElement.scrollHeight - innerHeight;
@@ -109,15 +107,21 @@ function setActive(id) {
   [...railLinks, ...navLinks].forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
 }
 
-const sectionObserver = new IntersectionObserver((entries) => {
+if (!('IntersectionObserver' in window)) {
+  sections.forEach(section => {
+    section.classList.add('is-active');
+    $$('.reveal', section).forEach(el => el.classList.add('is-visible'));
+  });
+}
+const sectionObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     setActive(entry.target.id);
     $$('.reveal', entry.target).forEach(el => el.classList.add('is-visible'));
     $$('.count', entry.target).forEach(animateCount);
   });
-}, { threshold: 0.55 });
-sections.forEach(section => sectionObserver.observe(section));
+}, { threshold: 0.35 }) : null;
+if (sectionObserver) sections.forEach(section => sectionObserver.observe(section));
 
 function animateCount(el) {
   if (el.dataset.done) return;
