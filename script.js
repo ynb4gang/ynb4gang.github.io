@@ -17,80 +17,80 @@ const detailGrid = $('#detailGrid');
 
 const details = {
   discovery: {
-    kicker: 'Product ownership', title: 'Discovery that finds the real data pain',
-    lead: 'Before building anything, I separate symptoms from root causes: broken definitions, slow access, missing ownership, low adoption or unstable pipelines.',
+    kicker: 'Data engineering + analytics', title: 'Analysis that finds the real data pain',
+    lead: 'Before building anything, I separate symptoms from root causes: broken definitions, slow access, missing lineage, low BI adoption or unstable pipelines.',
     items: [
-      ['Inputs', ['Stakeholder interviews', 'Current dashboards and reports', 'Incident history', 'Manual Excel flows']],
+      ['Inputs', ['Source systems', 'Current dashboards and reports', 'Incident history', 'Manual Excel flows']],
       ['Outputs', ['Problem statement', 'User groups', 'Metric conflicts', 'Initial KPI tree']],
       ['Questions', ['Who owns the metric?', 'What decision depends on it?', 'What happens if it is late?', 'How is trust measured?']],
-      ['Result', 'A clear product scope instead of a random list of technical tasks.']
+      ['Result', 'A clear analytical scope instead of a random list of technical tasks.']
     ]
   },
   prioritize: {
-    kicker: 'Product ownership', title: 'Prioritization with value and risk',
-    lead: 'A data backlog needs product discipline. I prioritize by business value, SLA risk, user adoption, data quality impact and engineering feasibility.',
+    kicker: 'Data engineering + analytics', title: 'Data modeling with value and risk',
+    lead: 'A data backlog needs engineering discipline. I model data by business value, SLA risk, BI adoption, data quality impact and implementation feasibility.',
     items: [
       ['Scoring', ['Business value', 'Reliability risk', 'Data quality impact', 'Effort and dependencies']],
-      ['Roadmap', ['Quick wins', 'Platform foundations', 'Executive metrics', 'Automation']],
+      ['Model', ['Staging layer', 'Core entities', 'Data marts', 'Executive metrics']],
       ['Trade-offs', ['Speed vs governance', 'Custom report vs scalable mart', 'Manual fix vs reusable pipeline']],
-      ['Result', 'A roadmap that engineering can ship and business can understand.']
+      ['Result', 'A DWH model that engineering can maintain and business can trust.']
     ]
   },
   deliver: {
-    kicker: 'Product ownership', title: 'Delivery that connects product and engineering',
+    kicker: 'Data engineering + analytics', title: 'Delivery that connects engineering and analytics',
     lead: 'Delivery is not only task tracking. It is release scope, acceptance criteria, data contracts, observability and rollout communication.',
     items: [
-      ['Artifacts', ['PRD / product brief', 'Acceptance criteria', 'Data contract', 'Release notes']],
+      ['Artifacts', ['DWH model', 'Acceptance criteria', 'Data contract', 'Release notes']],
       ['Engineering', ['Airflow DAGs', 'DWH layers', 'Data marts', 'BI layer', 'Quality checks']],
       ['Controls', ['SLA', 'Freshness', 'Backfill plan', 'Monitoring', 'Rollback logic']],
-      ['Result', 'Features land as a stable data product, not as isolated scripts.']
+      ['Result', 'Pipelines land as a stable analytical system, not as isolated scripts.']
     ]
   },
   measure: {
-    kicker: 'Product ownership', title: 'Measurement after release',
-    lead: 'A shipped feature is only useful if people trust and use it. I track adoption, reliability, freshness, latency and incident reduction.',
+    kicker: 'Data engineering + analytics', title: 'Reliability after release',
+    lead: 'A shipped pipeline is only useful if people trust and use it. I track BI adoption, reliability, freshness, latency and incident reduction.',
     items: [
-      ['Adoption', ['Dashboard usage', 'Active users', 'Repeat usage', 'Manual work removed']],
+      ['BI usage', ['Dashboard usage', 'Active users', 'Repeat usage', 'Manual work removed']],
       ['Reliability', ['SLA compliance', 'Pipeline success rate', 'Data freshness', 'MTTR']],
       ['Quality', ['Validation pass rate', 'Duplicates removed', 'Metric discrepancies', 'DQ score']],
-      ['Result', 'The product becomes a measurable business capability.']
+      ['Result', 'The data platform becomes a measurable business capability.']
     ]
   },
   sources: {
-    kicker: 'Architecture layer', title: 'Sources', lead: 'The product starts with understanding source ownership, data contracts and failure modes.',
-    items: [['Systems', ['CRM', 'ERP', 'Billing', 'APIs', 'Event streams']], ['Controls', ['Owner', 'Schema', 'Update frequency', 'Critical fields']], ['PO focus', 'Define which sources are product-critical and which can stay secondary.'], ['Risk', 'Unclear source ownership creates downstream metric disputes.']]
+    kicker: 'Architecture layer', title: 'Sources', lead: 'The pipeline starts with understanding source ownership, data contracts and failure modes.',
+    items: [['Systems', ['CRM', 'ERP', 'Billing', 'APIs', 'Event streams']], ['Controls', ['Owner', 'Schema', 'Update frequency', 'Critical fields']], ['DE/DA focus', 'Define which sources are business-critical and which can stay secondary.'], ['Risk', 'Unclear source logic creates downstream metric disputes.']]
   },
   ingestion: {
     kicker: 'Architecture layer', title: 'Ingestion', lead: 'Ingestion must be observable, retryable and aligned with freshness requirements.',
-    items: [['Tools', ['Airflow', 'Kafka', 'NiFi', 'CDC', 'Batch jobs']], ['Controls', ['Retries', 'Idempotency', 'Backfill', 'Alerts']], ['PO focus', 'Prioritize ingestion based on business freshness and SLA.'], ['Risk', 'Invisible ingestion failures destroy dashboard trust.']]
+    items: [['Tools', ['Airflow', 'Kafka', 'NiFi', 'CDC', 'Batch jobs']], ['Controls', ['Retries', 'Idempotency', 'Backfill', 'Alerts']], ['DE/DA focus', 'Prioritize ingestion based on business freshness and SLA.'], ['Risk', 'Invisible ingestion failures destroy dashboard trust.']]
   },
   processing: {
     kicker: 'Architecture layer', title: 'Processing', lead: 'Transformations should turn raw data into validated, documented and testable entities.',
-    items: [['Tools', ['Spark', 'SQL', 'Python', 'DQ checks']], ['Controls', ['Tests', 'Data quality rules', 'Deduplication', 'Normalization']], ['PO focus', 'Map processing logic to metric definitions and user decisions.'], ['Risk', 'Business logic hidden in SQL becomes impossible to govern.']]
+    items: [['Tools', ['Spark', 'SQL', 'Python', 'DQ checks']], ['Controls', ['Tests', 'Data quality rules', 'Deduplication', 'Normalization']], ['DE/DA focus', 'Map processing logic to metric definitions and user decisions.'], ['Risk', 'Business logic hidden in SQL becomes impossible to govern.']]
   },
   serving: {
     kicker: 'Architecture layer', title: 'Serving', lead: 'Serving layers are where data becomes reusable: DWH, marts, OLAP and APIs.',
-    items: [['Storage', ['PostgreSQL', 'Greenplum', 'ClickHouse', 'Data marts']], ['Controls', ['Partitioning', 'Indexes', 'Aggregations', 'Access model']], ['PO focus', 'Choose reusable marts over one-off extracts.'], ['Risk', 'Poor serving design creates slow dashboards and duplicated logic.']]
+    items: [['Storage', ['PostgreSQL', 'Greenplum', 'ClickHouse', 'Data marts']], ['Controls', ['Partitioning', 'Indexes', 'Aggregations', 'Access model']], ['DE/DA focus', 'Choose reusable marts over one-off extracts.'], ['Risk', 'Poor serving design creates slow dashboards and duplicated logic.']]
   },
   consumption: {
     kicker: 'Architecture layer', title: 'Consumption', lead: 'Consumption is the business interface: BI, alerts, AI assistants and APIs.',
-    items: [['Channels', ['Power BI', 'Tableau', 'Grafana', 'Superset', 'AI/RAG']], ['Controls', ['Metric definitions', 'Dashboard adoption', 'Alert relevance']], ['PO focus', 'Track whether users actually make better decisions.'], ['Risk', 'A dashboard without adoption is not a product.']]
+    items: [['Channels', ['Power BI', 'Tableau', 'Grafana', 'Superset', 'AI/RAG']], ['Controls', ['Metric definitions', 'Dashboard adoption', 'Alert relevance']], ['DE/DA focus', 'Track whether users actually make better decisions.'], ['Risk', 'A dashboard without adoption is not a decision tool.']]
   },
   'case-dwh': {
     kicker: 'Case 01', title: 'DWH performance optimization', lead: 'Slow analytical reporting was converted into a faster, more predictable DWH layer with measurable performance improvement.',
-    items: [['Problem', ['Heavy SQL queries', 'Slow marts', 'Unstable reporting windows', 'High business waiting time']], ['Product decision', ['Prioritize critical executive queries', 'Define performance SLA', 'Separate hot marts from historical layers']], ['Engineering solution', ['Partitioning', 'Indexing', 'Query plan tuning', 'Aggregation redesign']], ['Metrics', ['Up to 80% faster critical queries', 'More predictable reporting cycle', 'Lower operational friction']], ['Stack', ['Greenplum', 'PostgreSQL', 'SQL', 'Airflow']], ['Outcome', 'The platform became faster not only technically, but also more useful for recurring business decisions.']]
+    items: [['Problem', ['Heavy SQL queries', 'Slow marts', 'Unstable reporting windows', 'High business waiting time']], ['Analytical decision', ['Prioritize critical executive queries', 'Define performance SLA', 'Separate hot marts from historical layers']], ['Engineering solution', ['Partitioning', 'Indexing', 'Query plan tuning', 'Aggregation redesign']], ['Metrics', ['Up to 80% faster critical queries', 'More predictable reporting cycle', 'Lower operational friction']], ['Stack', ['Greenplum', 'PostgreSQL', 'SQL', 'Airflow']], ['Outcome', 'The platform became faster not only technically, but also more useful for recurring business decisions.']]
   },
   'case-dq': {
-    kicker: 'Case 02', title: 'Data quality product', lead: 'Messy counterparty records became a controlled data-quality flow with validation, deduplication and auditability.',
-    items: [['Problem', ['Duplicates', 'Inconsistent names', 'Manual checks', 'Low trust from legal/procurement']], ['Product decision', ['Treat DQ as a product capability', 'Define quality rules and ownership', 'Make changes auditable']], ['Engineering solution', ['Cleansing', 'Normalization', 'Validation', 'Matching to external registries']], ['Metrics', ['Fewer duplicates', 'Higher validation pass rate', 'Transparent change history']], ['Stack', ['Python', 'SQL', 'PostgreSQL', 'Airflow']], ['Outcome', 'Business teams can trust critical counterparty data instead of manually rechecking it.']]
+    kicker: 'Case 02', title: 'Data quality pipeline', lead: 'Messy counterparty records became a controlled data-quality flow with validation, deduplication and auditability.',
+    items: [['Problem', ['Duplicates', 'Inconsistent names', 'Manual checks', 'Low trust from legal/procurement']], ['Analytical decision', ['Treat DQ as a pipeline capability', 'Define quality rules and ownership', 'Make changes auditable']], ['Engineering solution', ['Cleansing', 'Normalization', 'Validation', 'Matching to external registries']], ['Metrics', ['Fewer duplicates', 'Higher validation pass rate', 'Transparent change history']], ['Stack', ['Python', 'SQL', 'PostgreSQL', 'Airflow']], ['Outcome', 'Business teams can trust critical counterparty data instead of manually rechecking it.']]
   },
   'case-ai': {
     kicker: 'Case 03', title: 'AI analytics assistant', lead: 'Manual Q&A and scattered knowledge can be transformed into a structured AI analytics assistant with RAG and BI context.',
-    items: [['Problem', ['Repeated questions', 'Scattered documentation', 'Slow answer cycle', 'Manual analyst load']], ['Product decision', ['Define user groups', 'Set answer boundaries', 'Connect BI and knowledge base', 'Measure answer usefulness']], ['Engineering solution', ['RAG layer', 'Document indexing', 'Dashboard context', 'Audit logs']], ['Metrics', ['Time-to-answer', 'Question deflection rate', 'Answer quality score', 'Adoption']], ['Stack', ['PostgreSQL', 'Qdrant', 'LLM/RAG', 'Airflow', 'BI']], ['Outcome', 'Managers get faster answers while analysts focus on deeper work.']]
+    items: [['Problem', ['Repeated questions', 'Scattered documentation', 'Slow answer cycle', 'Manual analyst load']], ['Analytical decision', ['Define user groups', 'Set answer boundaries', 'Connect BI and knowledge base', 'Measure answer usefulness']], ['Engineering solution', ['RAG layer', 'Document indexing', 'Dashboard context', 'Audit logs']], ['Metrics', ['Time-to-answer', 'Question deflection rate', 'Answer quality score', 'Adoption']], ['Stack', ['PostgreSQL', 'Qdrant', 'LLM/RAG', 'Airflow', 'BI']], ['Outcome', 'Managers get faster answers while analysts focus on deeper work.']]
   },
   'case-exec': {
     kicker: 'Case 04', title: 'Executive metrics layer', lead: 'Raw technical and business signals are turned into an accountable KPI layer for leadership decisions.',
-    items: [['Problem', ['Different teams used different KPI definitions', 'Dashboards showed conflicting numbers', 'Executives could not see freshness and quality risk']], ['Product decision', ['Define metric ownership', 'Build KPI tree', 'Separate operational and executive views', 'Add adoption and trust metrics']], ['Engineering solution', ['Metric mart', 'Aggregated BI layer', 'Freshness checks', 'Incident/status indicators']], ['Metrics', ['Dashboard adoption', 'Data freshness', 'SLA compliance', 'Metric discrepancy rate']], ['Stack', ['SQL', 'PostgreSQL/Greenplum', 'Airflow', 'BI', 'Grafana']], ['Outcome', 'Leadership gets a clear view of business performance and data reliability in one controlled surface.']]
+    items: [['Problem', ['Different teams used different KPI definitions', 'Dashboards showed conflicting numbers', 'Executives could not see freshness and quality risk']], ['Analytical decision', ['Define metric ownership', 'Build KPI tree', 'Separate operational and executive views', 'Add adoption and trust metrics']], ['Engineering solution', ['Metric mart', 'Aggregated BI layer', 'Freshness checks', 'Incident/status indicators']], ['Metrics', ['Dashboard adoption', 'Data freshness', 'SLA compliance', 'Metric discrepancy rate']], ['Stack', ['SQL', 'PostgreSQL/Greenplum', 'Airflow', 'BI', 'Grafana']], ['Outcome', 'Leadership gets a clear view of business performance and data reliability in one controlled surface.']]
   }
 };
 
@@ -222,7 +222,7 @@ function showToast(text) {
 setActive('hero');
 
 const flipWord = $('#flipWord');
-const rotatingWords = ['executives', 'analysts', 'product teams', 'operations', 'data leaders', 'roadmaps'];
+const rotatingWords = ['executives', 'analysts', 'data teams', 'operations', 'data leaders', 'BI users'];
 let wordIndex = 0;
 if (flipWord) {
   setInterval(() => {
